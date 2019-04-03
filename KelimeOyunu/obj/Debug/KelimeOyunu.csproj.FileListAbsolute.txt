@@ -1,0 +1,7 @@
+C:\Users\Zeynep\source\repos\KelimeOyunu\KelimeOyunu\bin\Debug\KelimeOyunu.exe.config
+C:\Users\Zeynep\source\repos\KelimeOyunu\KelimeOyunu\bin\Debug\KelimeOyunu.exe
+C:\Users\Zeynep\source\repos\KelimeOyunu\KelimeOyunu\bin\Debug\KelimeOyunu.pdb
+C:\Users\Zeynep\source\repos\KelimeOyunu\KelimeOyunu\obj\Debug\KelimeOyunu.csprojAssemblyReference.cache
+C:\Users\Zeynep\source\repos\KelimeOyunu\KelimeOyunu\obj\Debug\KelimeOyunu.csproj.CoreCompileInputs.cache
+C:\Users\Zeynep\source\repos\KelimeOyunu\KelimeOyunu\obj\Debug\KelimeOyunu.exe
+C:\Users\Zeynep\source\repos\KelimeOyunu\KelimeOyunu\obj\Debug\KelimeOyunu.pdb
