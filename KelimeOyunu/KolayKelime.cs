@@ -14,5 +14,7 @@ namespace KelimeOyunu
                                 "meyve","göz","sal","masa","kapı","kalem","saat","aç","lamba","takvim",
                                 "pil","çanta","gazete","cam","araba","kelebek","yaprak","kağıt","dağ","gölge",
                               };
+
+
     }
 }
