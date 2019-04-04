@@ -10,6 +10,10 @@ namespace KelimeOyunu
     {
         static void Main(string[] args)
         {
+          
+            Oyun a = new Oyun();
+            a.basla();
+            Console.ReadKey();
         }
     }
 }

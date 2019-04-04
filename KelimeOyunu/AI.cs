@@ -8,20 +8,18 @@ namespace KelimeOyunu
 {
     class AI : Oyuncu
     {
+        public AI(string zorlukDerecesi, string tahmini) : base(zorlukDerecesi, tahmini)
+        {
+            
+        }
         Random r = new Random();
         string[] kolay = Kelime.kolayKelimeGonder();
         string [] orta = Kelime.ortaKelimeGonder();
         string[] zor = Kelime.zorKelimeGonder();
 
-        private static string kullaniciAd;
-        private static string zorlukDerecesi;
+       
 
-        public AI(string isim, string zorluk) : base(kullaniciAd, zorlukDerecesi)
-        {
-            isim = base.kullaniciad;
-            zorluk = base.zorlukderecesi;
-
-        }
+       
         public static string [] rasgeleKolay;
         public static string[] rasgeleOrta;
         public static string[] rasgeleZor;
@@ -29,7 +27,7 @@ namespace KelimeOyunu
         {
             if (zorlukderecesi == "kolay")
             {
-                for(int i=0;i<10;i++)
+                for (int i = 0; i < 10; i++)
                 {
                     int randomIndex = r.Next(0, kolay.Length);
                     rasgeleKolay[i] = kolay[randomIndex];
@@ -37,7 +35,7 @@ namespace KelimeOyunu
 
             }
 
-            if (zorlukderecesi == "orta")
+            else if (zorlukderecesi == "orta")
             {
                 for (int i = 0; i < 10; i++)
                 {
@@ -46,7 +44,7 @@ namespace KelimeOyunu
                 }
             }
 
-            if (zorlukderecesi == "zor")
+            else if (zorlukderecesi == "zor")
             {
                 for (int i = 0; i < 10; i++)
                 {
@@ -54,6 +52,51 @@ namespace KelimeOyunu
                     rasgeleOrta[i] = orta[randomIndex];
                 }
             }
+            else Console.WriteLine("Yanlış seçim yaptınız");
+        }
+        
+        public void ipucuVer(string tahmini,string kelime)
+        {     
+            char[] tahminChar = tahmini.ToCharArray();
+            char[] kelimeChaar = kelime.ToCharArray();
+            if (tahmini == kelime)
+            {
+                Console.WriteLine("Doğru bildiniz tebrikler!!");
+
+            }
+            else
+            {
+                for(int i = 0; i < tahminChar.Length; i++)
+                {
+                    for(int j=0; j < kelimeChaar.Length; j++)
+                    {
+                        if(tahminChar[i]==kelimeChaar[j])
+                        {
+                            if(i==j)
+                            {
+                                Console.WriteLine("Eşlesme sağlayan karakterler= {0}", tahminChar[i]);
+                            }
+                           
+                        }
+                        
+                    }
+                }
+
+                for (int i = 0; i < tahminChar.Length; i++)
+                {
+                    for (int j = 0; j < kelimeChaar.Length; j++)
+                    {
+                        if (tahminChar[i] == kelimeChaar[j])
+                        {
+                                Console.WriteLine("Sözcükten yer alan karakterler= {0} ", tahminChar[i]);
+                        }
+                    }
+                }
+
+
+            }
+
+
         }
 
     }

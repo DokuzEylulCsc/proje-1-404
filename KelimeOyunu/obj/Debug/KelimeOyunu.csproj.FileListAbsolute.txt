@@ -5,3 +5,10 @@ C:\Users\Zeynep\source\repos\KelimeOyunu\KelimeOyunu\obj\Debug\KelimeOyunu.cspro
 C:\Users\Zeynep\source\repos\KelimeOyunu\KelimeOyunu\obj\Debug\KelimeOyunu.csproj.CoreCompileInputs.cache
 C:\Users\Zeynep\source\repos\KelimeOyunu\KelimeOyunu\obj\Debug\KelimeOyunu.exe
 C:\Users\Zeynep\source\repos\KelimeOyunu\KelimeOyunu\obj\Debug\KelimeOyunu.pdb
+C:\Users\Zeynep\Desktop\Yeni klasör\proje-1-404\KelimeOyunu\obj\Debug\KelimeOyunu.csprojAssemblyReference.cache
+C:\Users\Zeynep\Desktop\Yeni klasör\proje-1-404\KelimeOyunu\obj\Debug\KelimeOyunu.csproj.CoreCompileInputs.cache
+C:\Users\Zeynep\Desktop\Yeni klasör\proje-1-404\KelimeOyunu\obj\Debug\KelimeOyunu.exe
+C:\Users\Zeynep\Desktop\Yeni klasör\proje-1-404\KelimeOyunu\obj\Debug\KelimeOyunu.pdb
+C:\Users\Zeynep\Desktop\Yeni klasör\proje-1-404\KelimeOyunu\bin\Debug\KelimeOyunu.exe.config
+C:\Users\Zeynep\Desktop\Yeni klasör\proje-1-404\KelimeOyunu\bin\Debug\KelimeOyunu.exe
+C:\Users\Zeynep\Desktop\Yeni klasör\proje-1-404\KelimeOyunu\bin\Debug\KelimeOyunu.pdb

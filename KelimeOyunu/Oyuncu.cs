@@ -11,8 +11,8 @@ namespace KelimeOyunu
         //Oyuncu bilgileri ve oyunun zorluk derecesi
         private string kullaniciAd;
         private string zorlukDerecesi;
-        public [] string tahmini;
-        private string v;
+        private string tahmini;
+        
 
         public string kullaniciad
         {
