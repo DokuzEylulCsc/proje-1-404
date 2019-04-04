@@ -8,5 +8,6 @@ namespace KelimeOyunu
 {
     class Kaydedici
     {
+//asdfghjklasdfghjklasdfghjklasdfghjkl
     }
 }
