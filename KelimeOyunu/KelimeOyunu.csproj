@@ -46,14 +46,11 @@
     <Compile Include="AI.cs" />
     <Compile Include="Kaydedici.cs" />
     <Compile Include="Kelime.cs" />
-    <Compile Include="KolayKelime.cs" />
-    <Compile Include="OrtaKelime.cs" />
     <Compile Include="Oyun.cs" />
     <Compile Include="Oyuncu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tur.cs" />
-    <Compile Include="ZorKelime.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

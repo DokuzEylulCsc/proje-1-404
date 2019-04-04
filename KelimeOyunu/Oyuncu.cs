@@ -11,7 +11,7 @@ namespace KelimeOyunu
         //Oyuncu bilgileri ve oyunun zorluk derecesi
         private string kullaniciAd;
         private string zorlukDerecesi;
-        private int harfSayisi;
+        public [] string tahmini;
 
         public string kullaniciad
         {
@@ -37,27 +37,31 @@ namespace KelimeOyunu
                 zorlukDerecesi = value;
             }
         }
-
-        public int Harfsayisi
+        public string tahmin
         {
             get
             {
-                return harfSayisi;
+                return tahmini;
             }
             set
             {
-                if (value > 2 && value <= 12)
-                    harfSayisi = value;
-                else
-                    Console.WriteLine("Harf Sayısı 2 ile 12 arası olmalıdır.");
+                tahmini = value;
             }
         }
 
-        public Oyuncu(string kullaniciAd,string zorlukDerecesi,int harfSayisi)
+
+        public Oyuncu(string kullaniciAd, string zorlukDerecesi)
         {
             this.kullaniciAd = kullaniciAd;
             this.zorlukDerecesi = zorlukDerecesi;
-            this.harfSayisi = harfSayisi;
         }
+        public Oyuncu(string tahmini)
+        {
+            this.tahmini = tahmini;
+        }
+
     }
+
 }
+
+

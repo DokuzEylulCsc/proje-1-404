@@ -8,5 +8,24 @@ namespace KelimeOyunu
 {
     class Oyun
     {
+        private static string kullaniciAd;
+        private static string zorlukDerecesi;
+
+
+
+        public void basla()
+        {
+
+            // if (tahmin doğru çıkana kadar tahmin etme)
+            {
+                Console.WriteLine("Tahmininizi giriniz");
+                string tahmin = Console.ReadLine();
+            }
+
+
+        }
     }
+
+
 }
+
