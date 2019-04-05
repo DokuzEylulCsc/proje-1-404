@@ -11,6 +11,11 @@ namespace KelimeOyunu
         ////private static string kullaniciAd;
         ////private static string zorlukDerecesi;
         ////private static tahmi
+
+        public Oyun()
+        {
+
+        }
         public Oyun(string kullaniciAd,string zorlukDerecesi,string tahmin):base(kullaniciAd,zorlukDerecesi,tahmin)
         {
 
@@ -27,14 +32,16 @@ namespace KelimeOyunu
                 Console.WriteLine("Zorluk derecesini giriniz (kolay-orta-zor)");
                 zorlukderecesi = Console.ReadLine();
 
+                
                 Console.WriteLine("Tahmininizi giriniz");
                 tahmin = Console.ReadLine();
+                AI b = new AI(zorlukderecesi, tahmin);
+               
                 
+
             }
 
-
-
-
+            
         }
     }
 

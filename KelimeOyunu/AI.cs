@@ -16,14 +16,12 @@ namespace KelimeOyunu
         string[] kolay = Kelime.kolayKelimeGonder();
         string [] orta = Kelime.ortaKelimeGonder();
         string[] zor = Kelime.zorKelimeGonder();
-
-       
-
+        
        
         public static string [] rasgeleKolay;
         public static string[] rasgeleOrta;
         public static string[] rasgeleZor;
-        public void kelimeSec()
+        public string kelimeSec()
         {
             if (zorlukderecesi == "kolay")
             {
@@ -32,7 +30,7 @@ namespace KelimeOyunu
                     int randomIndex = r.Next(0, kolay.Length);
                     rasgeleKolay[i] = kolay[randomIndex];
                 }
-
+                return rasgeleKolay[];
             }
 
             else if (zorlukderecesi == "orta")
@@ -42,17 +40,19 @@ namespace KelimeOyunu
                     int randomIndex = r.Next(0, orta.Length);
                     rasgeleOrta[i] = orta[randomIndex];
                 }
+                return rasgeleOrta[];
             }
 
             else if (zorlukderecesi == "zor")
             {
                 for (int i = 0; i < 10; i++)
                 {
-                    int randomIndex = r.Next(0, orta.Length);
-                    rasgeleOrta[i] = orta[randomIndex];
+                    int randomIndex = r.Next(0, zor.Length);
+                    rasgeleZor[i] = zor[randomIndex];
                 }
+                return rasgeleZor[];
             }
-            else Console.WriteLine("Yanlış seçim yaptınız");
+            else Console.WriteLine("Yanlış seçim yaptınız"); return "";
         }
         
         public void ipucuVer(string tahmini,string kelime)
@@ -76,7 +76,6 @@ namespace KelimeOyunu
                             {
                                 Console.WriteLine("Eşlesme sağlayan karakterler= {0}", tahminChar[i]);
                             }
-                           
                         }
                         
                     }
@@ -92,12 +91,7 @@ namespace KelimeOyunu
                         }
                     }
                 }
-
-
             }
-
-
         }
-
     }
 }

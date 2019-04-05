@@ -50,6 +50,10 @@ namespace KelimeOyunu
             }
         }
 
+        public Oyuncu()
+        {
+
+        }
 
         public Oyuncu(string kullaniciAd)
         {
