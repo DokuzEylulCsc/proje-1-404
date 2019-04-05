@@ -10,8 +10,8 @@ namespace KelimeOyunu
     {
         public Kelime(string zorlukD,string tahmini) :base(zorlukDerecesi,tahmini)
         {
-            zorlukD = zorlukderecesi;
-            tahmini = tahmin;
+            //zorlukD = zorlukderecesi;
+            //tahmini = tahmin;
         }
 
       public static  string [] kolayKelime= { "çiçek", "böcek","edebiyat","kırmızı","mavi","merhaba","bırak","medeniyet","eski","ait",

@@ -55,7 +55,13 @@ namespace KelimeOyunu
         {
             this.kullaniciAd = kullaniciAd;
         }
-        public Oyuncu(string zorlukDerecesi,string tahmini)
+        public Oyuncu(string kullaniciAd,string zorlukDerecesi,string tahmini)
+        {
+            this.kullaniciAd = kullaniciAd;
+            this.tahmini = tahmini;
+            this.zorlukDerecesi = zorlukDerecesi;
+        }
+        public Oyuncu(string zorlukDerecesi, string tahmini)
         {
             this.tahmini = tahmini;
             this.zorlukDerecesi = zorlukDerecesi;
