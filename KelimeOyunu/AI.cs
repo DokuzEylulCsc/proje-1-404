@@ -8,7 +8,7 @@ namespace KelimeOyunu
 {
     class AI : Oyuncu
     {
-        public AI(string zorlukDerecesi, string tahmini) : base(zorlukDerecesi, tahmini)
+        public AI(string zorlukderecesi, string tahmini) : base(zorlukderecesi, tahmini)
         {
             
         }
@@ -16,11 +16,14 @@ namespace KelimeOyunu
         string[] kolay = Kelime.kolayKelimeGonder();
         string [] orta = Kelime.ortaKelimeGonder();
         string[] zor = Kelime.zorKelimeGonder();
-        
-       
-        public static string [] rasgeleKolay;
-        public static string[] rasgeleOrta;
-        public static string[] rasgeleZor;
+
+
+        public static string[] rasgeleKolay = new string[10];
+        public static string[] rasgeleOrta = new string[10];
+        public static string[] rasgeleZor = new string[10];
+
+        public static string[] secilenKelime = new string[10];
+
         public string kelimeSec()
         {
             if (zorlukderecesi == "kolay")
@@ -28,9 +31,11 @@ namespace KelimeOyunu
                 for (int i = 0; i < 10; i++)
                 {
                     int randomIndex = r.Next(0, kolay.Length);
-                    rasgeleKolay[i] = kolay[randomIndex];
+                    secilenKelime[i] = kolay[randomIndex];
                 }
-                return rasgeleKolay[];
+                Console.WriteLine(secilenKelime);
+                Console.WriteLine(zorlukderecesi);
+                //return rasgeleKolay[];
             }
 
             else if (zorlukderecesi == "orta")
@@ -38,9 +43,9 @@ namespace KelimeOyunu
                 for (int i = 0; i < 10; i++)
                 {
                     int randomIndex = r.Next(0, orta.Length);
-                    rasgeleOrta[i] = orta[randomIndex];
+                    secilenKelime[i] = orta[randomIndex];
                 }
-                return rasgeleOrta[];
+                //return rasgeleOrta[];
             }
 
             else if (zorlukderecesi == "zor")
@@ -48,9 +53,10 @@ namespace KelimeOyunu
                 for (int i = 0; i < 10; i++)
                 {
                     int randomIndex = r.Next(0, zor.Length);
-                    rasgeleZor[i] = zor[randomIndex];
+                   secilenKelime[i] = zor[randomIndex];
                 }
-                return rasgeleZor[];
+                //return rasgeleZor[];
+                return secilenKelime[];
             }
             else Console.WriteLine("Yanlış seçim yaptınız"); return "";
         }

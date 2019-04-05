@@ -24,7 +24,7 @@ namespace KelimeOyunu
         public void basla()
         {
 
-            // if (tahmin doğru çıkana kadar tahmin etme)
+            
             {
                 Console.WriteLine("Adınızı giriniz");
                 kullaniciad = Console.ReadLine();
@@ -35,8 +35,9 @@ namespace KelimeOyunu
                 
                 Console.WriteLine("Tahmininizi giriniz");
                 tahmin = Console.ReadLine();
+
                 AI b = new AI(zorlukderecesi, tahmin);
-               
+                b.kelimeSec();
                 
 
             }
