@@ -8,7 +8,7 @@ namespace KelimeOyunu
 {
     class Kelime : Oyuncu
     {
-        public Kelime(string zorlukD,string tahmini) :base(zorlukDerecesi,tahmini)
+        public Kelime(string zorlukDerecesi,string[] tahmini) :base(zorlukDerecesi,tahmini)
         {
             //zorlukD = zorlukderecesi;
             //tahmini = tahmin;
@@ -26,7 +26,7 @@ namespace KelimeOyunu
             "örtüler","çalışma","öğrenci","düzenli","yazılı","anlatım","geliştirme","ışık","açı","çarpı",
             "uyku","çevrim","kardeş","meslektaş","çalışkan","görevli","şarkıcı","soygun","sessizlik","kulaklık",
             "sevgi","saygı","fırıncı","gözlük","tuzlu","naneli","bilgin","sorgu","bilgisiz","sulak",
-            "kamuflaj","Bozacı","Belalı","Kitaplık","","","","","","",
+            "kamuflaj","Bozacı","Belalı","Kitaplık","a","b","c","d","e","f",
         };
 
        public static string [] zorKelime =  {
@@ -36,7 +36,7 @@ namespace KelimeOyunu
             "Karadeniz","Dershane","Kahvehane","Kanunname","Alabalık","Yanardöner","Uyurgezer","Kaynana","Alabalık","Beyefendi",
             "Emretmek","Karmakarışık","Bahşetmek","Kuşburnu","Defetmek","Azledilmek","Hissetmek","Hükmetmek","Altıparmak","Kütüphane",
         };
-        private static string zorlukDerecesi;
+        
 
         public static string [] kolayKelimeGonder()
         {

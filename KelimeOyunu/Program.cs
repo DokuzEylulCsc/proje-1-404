@@ -13,6 +13,7 @@ namespace KelimeOyunu
           
             Oyun a = new Oyun();
             a.basla();
+            
             Console.ReadKey();
         }
     }

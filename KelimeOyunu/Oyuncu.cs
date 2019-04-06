@@ -11,7 +11,7 @@ namespace KelimeOyunu
         //Oyuncu bilgileri ve oyunun zorluk derecesi
         private string kullaniciAd;
         private string zorlukDerecesi;
-        private string tahmini;
+        private string[] tahmini=new string[200];
         
 
         public string kullaniciad
@@ -38,7 +38,7 @@ namespace KelimeOyunu
                 zorlukDerecesi = value;
             }
         }
-        public string tahmin
+        public string[] tahmin
         {
             get
             {
@@ -55,17 +55,17 @@ namespace KelimeOyunu
 
         }
 
-        public Oyuncu(string kullaniciAd)
+        public Oyuncu(string zorlukDerecesi)
         {
-            this.kullaniciAd = kullaniciAd;
+            this.zorlukDerecesi =zorlukDerecesi;
         }
-        public Oyuncu(string kullaniciAd,string zorlukDerecesi,string tahmini)
+        public Oyuncu(string kullaniciAd,string zorlukDerecesi,string[] tahmini)
         {
             this.kullaniciAd = kullaniciAd;
             this.tahmini = tahmini;
             this.zorlukDerecesi = zorlukDerecesi;
         }
-        public Oyuncu(string zorlukDerecesi, string tahmini)
+        public Oyuncu(string zorlukDerecesi, string[] tahmini)
         {
             this.tahmini = tahmini;
             this.zorlukDerecesi = zorlukDerecesi;

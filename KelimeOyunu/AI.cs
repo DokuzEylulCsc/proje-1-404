@@ -8,9 +8,14 @@ namespace KelimeOyunu
 {
     class AI : Oyuncu
     {
-        public AI(string zorlukderecesi, string tahmini) : base(zorlukderecesi, tahmini)
+        public AI(string zorlukderecesi, string[] tahmini) : base(zorlukderecesi, tahmini)
         {
             
+        }
+
+        public AI(string zorlukderecesi) : base(zorlukderecesi)
+        {
+
         }
         Random r = new Random();
         string[] kolay = Kelime.kolayKelimeGonder();
@@ -24,7 +29,7 @@ namespace KelimeOyunu
 
         public static string[] secilenKelime = new string[10];
 
-        public string kelimeSec()
+        public string[] kelimeSec()
         {
             if (zorlukderecesi == "kolay")
             {
@@ -33,12 +38,13 @@ namespace KelimeOyunu
                     int randomIndex = r.Next(0, kolay.Length);
                     secilenKelime[i] = kolay[randomIndex];
                 }
-                Console.WriteLine(secilenKelime);
+                
                 Console.WriteLine(zorlukderecesi);
                 //return rasgeleKolay[];
+                
             }
 
-            else if (zorlukderecesi == "orta")
+             if (zorlukderecesi == "orta")
             {
                 for (int i = 0; i < 10; i++)
                 {
@@ -46,9 +52,10 @@ namespace KelimeOyunu
                     secilenKelime[i] = orta[randomIndex];
                 }
                 //return rasgeleOrta[];
+               
             }
 
-            else if (zorlukderecesi == "zor")
+            if (zorlukderecesi == "zor")
             {
                 for (int i = 0; i < 10; i++)
                 {
@@ -56,11 +63,22 @@ namespace KelimeOyunu
                    secilenKelime[i] = zor[randomIndex];
                 }
                 //return rasgeleZor[];
-                return secilenKelime[];
+                
             }
-            else Console.WriteLine("Yanlış seçim yaptınız"); return "";
+             return secilenKelime;
         }
-        
+        public void kelimeyazdir()
+        {
+            Console.WriteLine(secilenKelime[0]);
+        }
+        public bool dogruMu(string tahmin, string kelime)
+        {
+            if (tahmin == kelime) { return true; }
+            else return false;
+
+           
+        }
+
         public void ipucuVer(string tahmini,string kelime)
         {     
             char[] tahminChar = tahmini.ToCharArray();
@@ -68,7 +86,12 @@ namespace KelimeOyunu
             if (tahmini == kelime)
             {
                 Console.WriteLine("Doğru bildiniz tebrikler!!");
-
+                Oyun.j++;
+                if (Oyun.j <= 9)
+                {
+                    Console.WriteLine("{0}.kelimeyi tahmin ediniz.", (Oyun.j+1));
+                }
+               
             }
             else
             {
