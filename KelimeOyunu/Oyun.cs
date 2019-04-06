@@ -20,18 +20,43 @@ namespace KelimeOyunu
         {
 
         }
+        public static string zorlukd;
 
-        public void basla()
+        public void yenidenBasla()
+        {
+            string tercih;
+            Console.WriteLine("Yeniden mi başlamak mı yoksa mevcut oyun ayarlarla devam etmek mi? Yada bitirmek mi?(yeni-eski-bitir)");
+            tercih = Console.ReadLine();
+
+            if (tercih == "yeni" || tercih=="Yeni")
+            {
+                j = 0;
+                yeniBasla();
+            }
+
+            if (tercih == "eski" || tercih == "Eski")
+            {
+                j = 0;
+                eskiBasla();
+            }
+            if(tercih=="bitir"||tercih=="Bitir")
+            {
+                Console.WriteLine("Oyun bitti!");
+            }
+        }
+
+        public void yeniBasla()
         {
             
             {
+
                 Console.WriteLine("Adınızı giriniz");
                 kullaniciad = Console.ReadLine();
 
                 Console.WriteLine("Zorluk derecesini giriniz (kolay-orta-zor)");
                 zorlukderecesi = Console.ReadLine();
-                
-                    
+
+                zorlukd = zorlukderecesi;
                 
                 AI b = new AI(zorlukderecesi);
                 b.kelimeSec();
@@ -53,7 +78,7 @@ namespace KelimeOyunu
                   Console.Write(secilen[8] );
                    Console.Write(secilen[9] );
                    
-                    Console.WriteLine("Tahmininizi giriniz");
+                    Console.WriteLine("{0} harfli kelime için tahmininizi giriniz",secilen[j].Length);
                     tahmin[i] = Console.ReadLine();
                     b.ipucuVer(tahmin[i], secilen[j]);
                    
@@ -64,12 +89,37 @@ namespace KelimeOyunu
             
         }
 
-        public void bitir()
+        public void eskiBasla()
         {
-            if (j == 9)
+
             {
-                Console.WriteLine("Oyun bitti!");
+                AI b = new AI(zorlukd);
+                b.kelimeSec();
+
+                string[] secilen = b.kelimeSec().ToArray();
+
+                for (int i = 0; j != 10 && b.dogruMu(tahmin[i], secilen[j]) == false; i++)
+                {
+                    Console.Write(secilen[0]);
+                    Console.Write(secilen[1]);
+                    Console.Write(secilen[2]);
+                    Console.Write(secilen[3]);
+                    Console.Write(secilen[4]);
+                    Console.Write(secilen[5]);
+                    Console.Write(secilen[6]);
+                    Console.Write(secilen[7]);
+                    Console.Write(secilen[8]);
+                    Console.Write(secilen[9]);
+
+                    Console.WriteLine("Tahmininizi giriniz");
+                    tahmin[i] = Console.ReadLine();
+                    b.ipucuVer(tahmin[i], secilen[j]);
+
+                }
+
+
             }
+
         }
 
       
