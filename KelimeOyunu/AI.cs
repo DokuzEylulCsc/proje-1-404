@@ -28,7 +28,7 @@ namespace KelimeOyunu
         public static string[] rasgeleZor = new string[10];
 
         public static string[] secilenKelime = new string[10];
-
+        public string g;
         public string[] kelimeSec()
         {
             if (zorlukderecesi == "kolay")
@@ -39,9 +39,6 @@ namespace KelimeOyunu
                     secilenKelime[i] = kolay[randomIndex];
                 }
                 
-                Console.WriteLine(zorlukderecesi);
-                //return rasgeleKolay[];
-                
             }
 
              if (zorlukderecesi == "orta")
@@ -51,8 +48,6 @@ namespace KelimeOyunu
                     int randomIndex = r.Next(0, orta.Length);
                     secilenKelime[i] = orta[randomIndex];
                 }
-                //return rasgeleOrta[];
-               
             }
 
             if (zorlukderecesi == "zor")
@@ -62,10 +57,23 @@ namespace KelimeOyunu
                     int randomIndex = r.Next(0, zor.Length);
                    secilenKelime[i] = zor[randomIndex];
                 }
-                //return rasgeleZor[];
-                
             }
-             return secilenKelime;
+           
+            for (int i = 0; i <9; i++) {
+
+                for (int j = i + 1; j < 10;j++)
+                {
+                    int min;
+                    min = secilenKelime[i].Length;
+                    if (secilenKelime[i].Length > secilenKelime[j].Length)
+                    {
+                        g = secilenKelime[i];
+                        secilenKelime[i] = secilenKelime[j];
+                        secilenKelime[j] = g;
+                    }
+                }
+            }
+                return secilenKelime;
         }
         public void kelimeyazdir()
         {
@@ -75,10 +83,10 @@ namespace KelimeOyunu
         {
             if (tahmin == kelime) { return true; }
             else return false;
-
-           
+            
         }
-
+        
+       
         public void ipucuVer(string tahmini,string kelime)
         {     
             char[] tahminChar = tahmini.ToCharArray();
