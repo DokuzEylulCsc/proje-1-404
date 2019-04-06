@@ -60,8 +60,7 @@ namespace KelimeOyunu
                 
                 AI b = new AI(zorlukderecesi);
                 b.kelimeSec();
-
-               
+                
                
                 string[] secilen = b.kelimeSec().ToArray();
 
@@ -80,11 +79,16 @@ namespace KelimeOyunu
                    
                     Console.WriteLine("{0} harfli kelime için tahmininizi giriniz",secilen[j].Length);
                     tahmin[i] = Console.ReadLine();
-                    b.ipucuVer(tahmin[i], secilen[j]);
-                   
+                    if (tahmin[i].Length != secilen[j].Length)
+                    {
+                        Console.WriteLine("Lütfen {0} karakterli tahmin giriniz", secilen[j].Length);
+                    }
+                    else
+                    {
+                        b.ipucuVer(tahmin[i], secilen[j]);
+                    }
                 }
                 
-               
             }
             
         }
@@ -113,7 +117,14 @@ namespace KelimeOyunu
 
                     Console.WriteLine("Tahmininizi giriniz");
                     tahmin[i] = Console.ReadLine();
-                    b.ipucuVer(tahmin[i], secilen[j]);
+                    if (tahmin[i].Length != secilen[j].Length)
+                    {
+                        Console.WriteLine("Lütfen {0} karakterli tahmin giriniz", secilen[j].Length);
+                    }
+                    else
+                    {
+                        b.ipucuVer(tahmin[i], secilen[j]);
+                    }
 
                 }
 
