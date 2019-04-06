@@ -42,16 +42,16 @@ namespace KelimeOyunu
 
                 for (int i = 0; j!=10 && b.dogruMu(tahmin[i], secilen[j]) == false; i++)
                 {
-                //    Console.WriteLine(secilen[0]);
-                //    Console.WriteLine(secilen[1]);
-                //    Console.WriteLine(secilen[2]);
-                //    Console.WriteLine(secilen[3]);
-                //    Console.WriteLine(secilen[4]);
-                //    Console.WriteLine(secilen[5]);
-                //    Console.WriteLine(secilen[6]);
-                //    Console.WriteLine(secilen[7]);
-                //    Console.WriteLine(secilen[8]);
-                //    Console.WriteLine(secilen[9]);
+                   Console.Write(secilen[0] );
+                   Console.Write(secilen[1] );
+                  Console.Write(secilen[2] );
+                Console.Write(secilen[3] );
+                   Console.Write(secilen[4] );
+                   Console.Write(secilen[5] );
+                    Console.Write(secilen[6] );
+                   Console.Write(secilen[7] );
+                  Console.Write(secilen[8] );
+                   Console.Write(secilen[9] );
                    
                     Console.WriteLine("Tahmininizi giriniz");
                     tahmin[i] = Console.ReadLine();
@@ -62,6 +62,14 @@ namespace KelimeOyunu
                
             }
             
+        }
+
+        public void bitir()
+        {
+            if (j == 9)
+            {
+                Console.WriteLine("Oyun bitti!");
+            }
         }
 
       
