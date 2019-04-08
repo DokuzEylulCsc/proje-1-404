@@ -40,7 +40,7 @@ namespace KelimeOyunu
                         randomIndex[i] = r.Next(0, kolay.Length);//kolay dizisine rasgele atama yapabilmek için 0'dan 50'ye kadar 10 sayı üretip onu dizinin indisine yazdık. 
                         if (randomIndex[i] == randomIndex[z])
                         {
-                            randomIndex[z] = r.Next(0, kolay.Length);
+                            randomIndex[i] = r.Next(0, kolay.Length);
                         }
                     }
                     secilenKelime[i] = kolay[randomIndex[i]];
@@ -57,7 +57,7 @@ namespace KelimeOyunu
                         randomIndex[i] = r.Next(0, orta.Length);//orta dizisine rasgele atama yapabilmek için 0'dan 50'ye kadar 10 sayı üretip onu dizinin indisine yazdık. 
                         if (randomIndex[i] == randomIndex[z])
                         {
-                            randomIndex[z] = r.Next(0, orta.Length);
+                            randomIndex[i] = r.Next(0, orta.Length);
                         }
                     }
                     secilenKelime[i] = orta[randomIndex[i]];
@@ -74,7 +74,7 @@ namespace KelimeOyunu
                         randomIndex[i] = r.Next(0, zor.Length);//zor dizisine rasgele atama yapabilmek için 0'dan 50'ye kadar 10 sayı üretip onu dizinin indisine yazdık. 
                         if (randomIndex[i] == randomIndex[z])
                         {
-                            randomIndex[z] = r.Next(0, zor.Length);
+                            randomIndex[i] = r.Next(0, zor.Length);
                         }
                     }
                     secilenKelime[i] = zor[randomIndex[i]];
