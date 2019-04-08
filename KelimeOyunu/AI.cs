@@ -81,7 +81,7 @@ namespace KelimeOyunu
                 }
             }
 
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < 10; i++)
             {
                 for (int j = i + 1; j < 10; j++)
                 {
@@ -111,7 +111,7 @@ namespace KelimeOyunu
             }
             else
             {
-                sayac[s]++;//tahmin sayısını bulmak için bir sayaç
+                sayac[Oyun.j]++;//tahmin sayısını bulmak için bir sayaç
                 return false;
             }
         }
@@ -127,7 +127,7 @@ namespace KelimeOyunu
                 Console.WriteLine("Doğru bildiniz tebrikler!!");
                 Oyun.j++; //Doğru bilince yeni kelimeye geçmesi
                 Console.Clear();
-                s = Oyun.j;
+                
                 if (Oyun.j <= 9)
                 {
                     Console.WriteLine("{0}.kelimeyi tahmin ediniz.", (Oyun.j + 1));
