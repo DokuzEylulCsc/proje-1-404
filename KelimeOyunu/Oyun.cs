@@ -139,7 +139,7 @@ namespace KelimeOyunu
                         b.ipucuVer(tahmin[i], secilen[j]); //AI'daki ipucu verme metodu.
                 }
                 }
-
+            
             j = 0;
         }
     }
