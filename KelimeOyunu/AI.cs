@@ -83,7 +83,7 @@ namespace KelimeOyunu
 
             for (int i = 0; i < 9; i++)
             {
-                for (int j =i; j < 10; j++)
+                for (int j =i+1; j < 10; j++)
                 {
                     int min;
                     min = secilenKelime[i].Length;//kullanıcıya kelimelerin küçükten büyüğe şeklinde sıralı çıkması
@@ -132,7 +132,7 @@ namespace KelimeOyunu
                 Oyun.j++; //Doğru bilince yeni kelimeye geçmesi
                 
                 Console.Clear();
-
+                s = Oyun.j;
             
             if (Oyun.j <= 9)
             {
