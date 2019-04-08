@@ -45,13 +45,12 @@ namespace KelimeOyunu
             if (tercih == "yeni" || tercih=="Yeni")
             {
                 yeniBasla();
-                j = 0;
                 return true;
             }
 
             if (tercih == "eski" || tercih == "Eski")
             {
-                j = 0;
+            
                 eskiBasla();
                 return true;
             }

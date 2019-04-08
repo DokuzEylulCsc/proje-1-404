@@ -83,7 +83,7 @@ namespace KelimeOyunu
 
             for (int i = 0; i < 9; i++)
             {
-                for (int j = i + 1; j < 10; j++)
+                for (int j =i; j < 10; j++)
                 {
                     int min;
                     min = secilenKelime[i].Length;//kullanıcıya kelimelerin küçükten büyüğe şeklinde sıralı çıkması
@@ -96,6 +96,7 @@ namespace KelimeOyunu
                 }
             }
             return secilenKelime;
+          
         }
 
         public static int[] sayac = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -111,7 +112,7 @@ namespace KelimeOyunu
             }
             else
             {
-                sayac[s]++;//tahmin sayısını bulmak için bir sayaç
+                sayac[Oyun.j]++;//tahmin sayısını bulmak için bir sayaç
                 return false;
             }
         }
@@ -119,20 +120,25 @@ namespace KelimeOyunu
 
         public void ipucuVer(string tahmini, string kelime)
         {
+
             char[] tahminChar = tahmini.ToCharArray();//Girilen tahminin harflere ayrılarak bir diziye aktarılması
-                                                     // bu sayede doğru bilip bilmediğini öğrenip ona göre ipucu verme
+                                                      // bu sayede doğru bilip bilmediğini öğrenip ona göre ipucu verme
             char[] kelimeChaar = kelime.ToCharArray();
             if (tahmini == kelime)
             {
+
+               
                 Console.WriteLine("Doğru bildiniz tebrikler!!");
                 Oyun.j++; //Doğru bilince yeni kelimeye geçmesi
+                
                 Console.Clear();
-                s = Oyun.j;
-                if (Oyun.j <= 9)
-                {
-                    Console.WriteLine("{0}.kelimeyi tahmin ediniz.", (Oyun.j + 1));
-                }
+
+            
+            if (Oyun.j <= 9)
+            {
+                Console.WriteLine("{0}.kelimeyi tahmin ediniz.", (Oyun.j + 1));
             }
+        }
             else
             {
                 Console.WriteLine("Eşlesme sağlayan karakterler");
@@ -159,6 +165,7 @@ namespace KelimeOyunu
                         Console.WriteLine(" {0} " + "-------->", kelimeChaar[j]);
                     }
                 }
+               Oyun.j = 0;
 
             }
         }
