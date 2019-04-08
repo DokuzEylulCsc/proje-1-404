@@ -8,6 +8,7 @@ namespace KelimeOyunu
 {
     class AI : Oyuncu
     {
+        public static int s=0;
         public AI(string zorlukderecesi, string[] tahmini) : base(zorlukderecesi, tahmini)
         {
             
@@ -21,41 +22,65 @@ namespace KelimeOyunu
         string[] kolay = Kelime.kolayKelimeGonder();
         string [] orta = Kelime.ortaKelimeGonder();
         string[] zor = Kelime.zorKelimeGonder();
-
-
         public static string[] rasgeleKolay = new string[10];
         public static string[] rasgeleOrta = new string[10];
         public static string[] rasgeleZor = new string[10];
-
+       
         public static string[] secilenKelime = new string[10];
-        public string g;
+        public string gecici;
         public string[] kelimeSec()
         {
             if (zorlukderecesi == "kolay")
             {
+                int[] randomIndex = new int[10];
                 for (int i = 0; i < 10; i++)
                 {
-                    int randomIndex = r.Next(0, kolay.Length);
-                    secilenKelime[i] = kolay[randomIndex];
+                    for(int z = i + 1; z < 10; z++)
+                    {
+                        randomIndex[i] = r.Next(0, kolay.Length);
+                        if (randomIndex[i] == randomIndex[z])
+                        {
+                            randomIndex[z] = r.Next(0, kolay.Length);
+                        }
+                    }
+                    secilenKelime[i] = kolay[randomIndex[i]];
                 }
                 
             }
 
              if (zorlukderecesi == "orta")
             {
+
+                int[] randomIndex = new int[10];
                 for (int i = 0; i < 10; i++)
                 {
-                    int randomIndex = r.Next(0, orta.Length);
-                    secilenKelime[i] = orta[randomIndex];
+                    for (int z = i + 1; z < 10; z++)
+                    {
+                        randomIndex[i] = r.Next(0, orta.Length);
+                        if (randomIndex[i] == randomIndex[z])
+                        {
+                            randomIndex[z] = r.Next(0, orta.Length);
+                        }
+                    }
+                    secilenKelime[i] = orta[randomIndex[i]];
                 }
             }
 
             if (zorlukderecesi == "zor")
             {
+
+                int[] randomIndex = new int[10];
                 for (int i = 0; i < 10; i++)
                 {
-                    int randomIndex = r.Next(0, zor.Length);
-                   secilenKelime[i] = zor[randomIndex];
+                    for (int z = i + 1; z < 10; z++)
+                    {
+                        randomIndex[i] = r.Next(0, zor.Length);
+                        if (randomIndex[i] == randomIndex[z])
+                        {
+                            randomIndex[z] = r.Next(0, zor.Length);
+                        }
+                    }
+                    secilenKelime[i] = zor[randomIndex[i]];
                 }
             }
            
@@ -67,23 +92,31 @@ namespace KelimeOyunu
                     min = secilenKelime[i].Length;
                     if (secilenKelime[i].Length > secilenKelime[j].Length)
                     {
-                        g = secilenKelime[i];
+                        gecici = secilenKelime[i];
                         secilenKelime[i] = secilenKelime[j];
-                        secilenKelime[j] = g;
+                        secilenKelime[j] = gecici;
                     }
                 }
             }
                 return secilenKelime;
         }
+        
+        public static int [] sayac= {0,0,0,0,0,0,0,0,0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public void kelimeyazdir()
         {
             Console.WriteLine(secilenKelime[0]);
         }
         public bool dogruMu(string tahmin, string kelime)
         {
-            if (tahmin == kelime) { return true; }
-            else return false;
-            
+            if (tahmin == kelime) {
+               
+                return true;
+            }
+            else
+            {
+                sayac[s]++;
+                return false;
+            }
         }
         
        
@@ -95,6 +128,8 @@ namespace KelimeOyunu
             {
                 Console.WriteLine("Doğru bildiniz tebrikler!!");
                 Oyun.j++;
+                Console.Clear();
+                s = Oyun.j;
                 if (Oyun.j <= 9)
                 {
                     Console.WriteLine("{0}.kelimeyi tahmin ediniz.", (Oyun.j+1));
@@ -103,31 +138,32 @@ namespace KelimeOyunu
             }
             else
             {
-                for(int i = 0; i < tahminChar.Length; i++)
+                Console.WriteLine("Eşlesme sağlayan karakterler");
+                for (int i = 0; i < tahminChar.Length; i++)
                 {
                     for(int j=0; j < kelimeChaar.Length; j++)
                     {
                         if(tahminChar[i]==kelimeChaar[j])
                         {
-                            if(i==j)
+                            
+                            if (i==j)
                             {
-                                Console.WriteLine("Eşlesme sağlayan karakterler= {0}", tahminChar[i]);
+                                Console.Write("{0}"+"------->", tahminChar[i]);
                             }
                         }
-                        
                     }
                 }
+                Console.WriteLine("\n");
+                Console.WriteLine("Sözcükten yer alan karakterler ");
 
-                for (int i = 0; i < tahminChar.Length; i++)
+                for (int j = 0; j < kelimeChaar.Length; j++)
                 {
-                    for (int j = 0; j < kelimeChaar.Length; j++)
+                    if (tahminChar.Contains(kelimeChaar[j]))
                     {
-                        if (tahminChar[i] == kelimeChaar[j])
-                        {
-                                Console.WriteLine("Sözcükten yer alan karakterler= {0} ", tahminChar[i]);
-                        }
+                        Console.WriteLine(" {0} " + "-------->", kelimeChaar[j]);
                     }
                 }
+                
             }
         }
     }

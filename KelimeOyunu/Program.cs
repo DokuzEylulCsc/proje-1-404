@@ -10,10 +10,16 @@ namespace KelimeOyunu
     {
         static void Main(string[] args)
         {
-          
+           
             Oyun a = new Oyun();
-            a.yeniBasla();
-            a.yenidenBasla();
+            Kaydedici b = new Kaydedici();
+            while (a.yenidenBasla() == true)
+            {
+                
+                b.kacTahmin();
+            }
+           
+                
             
             Console.ReadKey();
         }

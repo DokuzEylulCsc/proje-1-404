@@ -8,9 +8,7 @@ namespace KelimeOyunu
 {
     class Oyun : Oyuncu
     {
-        ////private static string kullaniciAd;
-        ////private static string zorlukDerecesi;
-        ////private static tahmi
+        
         public static int j = 0;
         public Oyun()
         {
@@ -21,35 +19,55 @@ namespace KelimeOyunu
 
         }
         public static string zorlukd;
+        public static string tercih;
+        // public static bool yeniden()
+        //{
+        //    if (tercih == "Yeni")
+        //    {
+                
+        //        return true;
+                
+        //    }
+        //    if (tercih == "yeni")
+        //    {
+                
+        //        return true;
+        //    }
+        //    else return false;
 
-        public void yenidenBasla()
+        //}
+        public bool yenidenBasla()
         {
-            string tercih;
-            Console.WriteLine("Yeniden mi başlamak mı yoksa mevcut oyun ayarlarla devam etmek mi? Yada bitirmek mi?(yeni-eski-bitir)");
+
+            Console.WriteLine("Yeni oyunla başlamak için (yeni), ilk oynadıysanız ilk(eski) oyun ayarlarla devam etmek mi? Yada bitirmek mi?(yeni-eski-bitir)");
             tercih = Console.ReadLine();
 
             if (tercih == "yeni" || tercih=="Yeni")
             {
-                j = 0;
                 yeniBasla();
+                j = 0;
+                return true;
             }
 
             if (tercih == "eski" || tercih == "Eski")
             {
                 j = 0;
                 eskiBasla();
+                return true;
             }
             if(tercih=="bitir"||tercih=="Bitir")
             {
                 Console.WriteLine("Oyun bitti!");
+                return false;
             }
+            else
+            return false;
+            
         }
 
         public void yeniBasla()
         {
-            
             {
-
                 Console.WriteLine("Adınızı giriniz");
                 kullaniciad = Console.ReadLine();
 
@@ -61,7 +79,6 @@ namespace KelimeOyunu
                 AI b = new AI(zorlukderecesi);
                 b.kelimeSec();
                 
-               
                 string[] secilen = b.kelimeSec().ToArray();
 
                 for (int i = 0; j!=10 && b.dogruMu(tahmin[i], secilen[j]) == false; i++)
@@ -75,7 +92,7 @@ namespace KelimeOyunu
                     Console.Write(secilen[6] );
                    Console.Write(secilen[7] );
                   Console.Write(secilen[8] );
-                   Console.Write(secilen[9] );
+                  Console.Write(secilen[9] );
                    
                     Console.WriteLine("{0} harfli kelime için tahmininizi giriniz",secilen[j].Length);
                     tahmin[i] = Console.ReadLine();
@@ -90,13 +107,11 @@ namespace KelimeOyunu
                 }
                 
             }
-            
+            j = 0;
         }
 
         public void eskiBasla()
         {
-
-            {
                 AI b = new AI(zorlukd);
                 b.kelimeSec();
 
@@ -115,7 +130,7 @@ namespace KelimeOyunu
                     Console.Write(secilen[8]);
                     Console.Write(secilen[9]);
 
-                    Console.WriteLine("Tahmininizi giriniz");
+                    Console.WriteLine("{0}"+"harfli tahmininizi giriniz",secilen[j].Length);
                     tahmin[i] = Console.ReadLine();
                     if (tahmin[i].Length != secilen[j].Length)
                     {
@@ -125,17 +140,15 @@ namespace KelimeOyunu
                     {
                         b.ipucuVer(tahmin[i], secilen[j]);
                     }
-
                 }
-
-
-            }
+            
+            j = 0;
 
         }
 
-      
+       
+
     }
-
-
+    
 }
 
