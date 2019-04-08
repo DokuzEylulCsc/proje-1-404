@@ -12,9 +12,8 @@ namespace KelimeOyunu
         private string kullaniciAd;
         private string zorlukDerecesi;
         private string[] tahmini=new string[200];
-        
 
-        public string kullaniciad
+        public string kullaniciad //kullanıcı adı get ve set
         {
             get
             {
@@ -26,7 +25,7 @@ namespace KelimeOyunu
             }
         }
 
-        public string zorlukderecesi
+        public string zorlukderecesi//zorluk derecesi get ve set
         {
             get
             {
@@ -38,7 +37,7 @@ namespace KelimeOyunu
                 zorlukDerecesi = value;
             }
         }
-        public string[] tahmin
+        public string[] tahmin //tahmin get ve set
         {
             get
             {
@@ -54,7 +53,6 @@ namespace KelimeOyunu
         {
 
         }
-
         public Oyuncu(string zorlukDerecesi)
         {
             this.zorlukDerecesi =zorlukDerecesi;
@@ -70,9 +68,7 @@ namespace KelimeOyunu
             this.tahmini = tahmini;
             this.zorlukDerecesi = zorlukDerecesi;
         }
-
     }
-
 }
 
 

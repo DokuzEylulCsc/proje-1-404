@@ -36,9 +36,9 @@ namespace KelimeOyunu
         //    else return false;
 
         //}
-        public bool yenidenBasla()
+        public bool yenidenBasla() // Kullanıcının tercihine göre oyunu yeniden başlatma, 
+                                  //ilk bir oyun oynadıysa eski ayarlarla oynamaya devam etme ve oyunu bitirme 
         {
-
             Console.WriteLine("Yeni oyunla başlamak için (yeni), ilk oynadıysanız ilk(eski) oyun ayarlarla devam etmek mi? Yada bitirmek mi?(yeni-eski-bitir)");
             tercih = Console.ReadLine();
 
@@ -62,10 +62,9 @@ namespace KelimeOyunu
             }
             else
             return false;
-            
         }
 
-        public void yeniBasla()
+        public void yeniBasla() //yeni oyuna başlama metodu
         {
             {
                 Console.WriteLine("Adınızı giriniz");
@@ -79,9 +78,9 @@ namespace KelimeOyunu
                 AI b = new AI(zorlukderecesi);
                 b.kelimeSec();
                 
-                string[] secilen = b.kelimeSec().ToArray();
+                string[] secilen = b.kelimeSec().ToArray(); //AI classında rastgele seçtiğimiz 10 kelimenin Oyun classına aktarımı için
 
-                for (int i = 0; j!=10 && b.dogruMu(tahmin[i], secilen[j]) == false; i++)
+                for (int i = 0; j!=10 && b.dogruMu(tahmin[i], secilen[j]) == false; i++) //kullanıcının tahmini ile seçilen kelime birbirini tutmadığı sürece tahmin almaya devam etme
                 {
                    Console.Write(secilen[0] );
                    Console.Write(secilen[1] );
@@ -102,23 +101,22 @@ namespace KelimeOyunu
                     }
                     else
                     {
-                        b.ipucuVer(tahmin[i], secilen[j]);
+                        b.ipucuVer(tahmin[i], secilen[j]); //AI'daki ipucu verme metodu.
                     }
                 }
-                
             }
             j = 0;
         }
 
-        public void eskiBasla()
+        public void eskiBasla() //bir önceki oyunun zorluk derecesi ayarlarıyla oynama metofu
         {
                 AI b = new AI(zorlukd);
                 b.kelimeSec();
 
-                string[] secilen = b.kelimeSec().ToArray();
+                string[] secilen = b.kelimeSec().ToArray();//AI classında rastgele seçtiğimiz 10 kelimenin Oyun classına aktarımı için
 
-                for (int i = 0; j != 10 && b.dogruMu(tahmin[i], secilen[j]) == false; i++)
-                {
+            for (int i = 0; j != 10 && b.dogruMu(tahmin[i], secilen[j]) == false; i++) //kullanıcının tahmini ile seçilen kelime birbirini tutmadığı sürece tahmin almaya devam etme
+            {
                     Console.Write(secilen[0]);
                     Console.Write(secilen[1]);
                     Console.Write(secilen[2]);
@@ -138,16 +136,12 @@ namespace KelimeOyunu
                     }
                     else
                     {
-                        b.ipucuVer(tahmin[i], secilen[j]);
-                    }
+                        b.ipucuVer(tahmin[i], secilen[j]); //AI'daki ipucu verme metodu.
+                }
                 }
             
             j = 0;
-
         }
-
-       
-
     }
     
 }
